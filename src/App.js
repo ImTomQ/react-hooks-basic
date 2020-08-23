@@ -1,10 +1,18 @@
 import React from "react";
-import Color from "./components/Color";
+import TodoList from "./components/TodoList";
 
 function App() {
+  const listTodo = [
+    { id: 1, title: "one" },
+    { id: 2, title: "two" },
+    { id: 3, title: "three" },
+  ];
+  function handleChange(todo) {
+    console.log(listTodo.filter((item) => item.id !== todo));
+  }
   return (
     <>
-      <Color />
+      <TodoList handleClick={handleChange} TodoList={listTodo} />
     </>
   );
 }
